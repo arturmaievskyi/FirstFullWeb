@@ -1,0 +1,12 @@
+{% include 'main/layout.html' %}
+{% block content %}
+<h1 class="h1-projects">Projects Page</h1>
+{% for project in Projects %}
+    <div class="project">
+        <img src="{% static '' %}" alt="">
+        <h2>{{ project.title }}</h2>
+        <p>{{ project.shortDescription }}</p>
+        <a href="{% url 'Project Details and Testing' project.id %}">View Details</a>
+    </div>
+{% endfor %}
+{% endblock %}
