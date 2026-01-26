@@ -1,11 +1,15 @@
 from django.shortcuts import render
 
-
 # Create your views here.
 
 def home(request):
-    data = {"Title": "Main Page"}
-    return render(request, 'index.html', context=data)
+    data = {
+        "MyTitle": "Main Page",
+        "Content": "Welcome to the Main Page",
+        "About": "This is the home page of our website."
+        }
+
+    return render(request, 'main/index.html', context=data)
 
 
 def login_view(request):

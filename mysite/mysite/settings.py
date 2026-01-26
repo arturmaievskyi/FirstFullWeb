@@ -28,15 +28,12 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'localhost',
-    '127.0.0.1',
 ]
 
 
 # Application definition
 
 INSTALLED_APPS = [
-    'rest_framework',
-    'corsheaders',
     'main.apps.MainConfig',
     'projects.apps.ProjectsConfig',
     'django.contrib.admin',
@@ -45,7 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-]
+
+    ]
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
@@ -59,7 +57,8 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",  # React dev server
+    "http://localhost:8000",
+    "http://localhost:5173",
 ]
 
 ROOT_URLCONF = 'mysite.urls'
@@ -127,12 +126,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-STATIC_URL = "static/"
+STATIC_URL = 'static/'
 STATICFILES_DIRS = [
-    BASE_DIR / "static",
-    "static/",
+    BASE_DIR / "main/static",
 ]
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'frontend', 'dist')]
+STATIC_ROOT = BASE_DIR / "staticfiles"
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
