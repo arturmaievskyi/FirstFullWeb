@@ -1,0 +1,11 @@
+{% include 'main/layout'   %}
+{% block content %}
+    <div class="login">
+        <h1 id="login-title">Login</h1>
+        <form action="{% url 'login' %}" method="post">
+            <input type="text" name="username" placeholder="Username">
+            <input type="password" name="password" placeholder="Password">
+            <button type="submit">Login</button>
+        </form>
+    </div>
+{% endblock %}

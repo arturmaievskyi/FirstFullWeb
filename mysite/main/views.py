@@ -1,22 +1,25 @@
 from django.shortcuts import render
+from django.http import JsonResponse
+from django.http.request import HttpRequest
 
 # Create your views here.
 
 def home(request):
-    data = {
-        "MyTitle": "Main Page",
-        "Content": "Welcome to the Main Page",
-        "About": "This is the home page of our website."
+    if request.method == 'GET':
+        data = {
+            'message': 'Hello from React!'
         }
-
-    return render(request, 'main/index.html', context=data)
-
+        return JsonResponse(data)
+    
+    else:
+        return render(request, 'main/home.html')
 
 def login_view(request):
     return  render(request, 'main/login.html')
 
 def register(request):
     return render(request, 'main/register.html')
+
 
 def profile(request):
     return render(request, 'main/profile.html')

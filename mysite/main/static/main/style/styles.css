@@ -1,3 +1,19 @@
-body{
+main{
     background-color: #41a6ff;
+}
+
+.login{
+    width: 100%;
+    background-color: #92ff31;
+
+}
+
+#login-title{
+    text-align: center;
+    padding: 20px;
+}
+
+.signup{
+    width: 100%;
+    float: right;
 }

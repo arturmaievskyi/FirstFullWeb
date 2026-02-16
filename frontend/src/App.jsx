@@ -1,23 +1,27 @@
 import { useEffect, useState } from "react";
 
+
+console.log("Hello world");
+
+
 function App() {
-  const [MyTitle, Content, About] = useState([]);
+    const [pageData, setPageData] = useState({});
 
-  useEffect(() => {
-    fetch("http://127.0.0.1:8000")
-      .then(res => res.json())
-      .then(data => setPosts(data))
-      .catch(err => console.error(err));
-  }, []);
+    useEffect(() => {
+        fetch('http://127.0.0.1:8000/') // Path to your Django view
+            // .then(res => res.json())
+            .then(data => setPageData(data));
+}, []);
 
-  return (
-    
+
+return (
     <div className="App">
-      <h1>{MyTitle}</h1>
-      <p>{Content}</p>
-      <p>{About}</p>
+        <h1>{data.message}</h1>
     </div>
-  );
+);
 }
+console.log("Hello world");
+
+
 
 export default App;
