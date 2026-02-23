@@ -6,7 +6,7 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" href="{% static 'main/style/styles.css' %}">
         <link rel="stylesheet" href="{% static 'main/style/bootstrap.css' %}">
-        <title>{% block title %}{% endblock %}</title>
+        {% block title %}{% endblock %}
     </head>
 
     <body>
@@ -34,7 +34,7 @@
                                     Dropdown
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="{% url 'home' %}">Home</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'settings' %}">Settings</a></li>
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
@@ -54,8 +54,9 @@
         </main>
         <footer>
             <br>
-            <p>&copy; Niarmaci</p>
-                <script src="{% static 'main/JS/bootstrap.js' %}"></script>
+            <p>&copy; Artur Mayevski</p>
+            <script src="{% static 'main/JS/bootstrap.js' %}"></script>
+            <script src="{% static 'main/JS/seetings.js' %}"></script>
         </footer>
     </body>
 

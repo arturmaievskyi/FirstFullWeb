@@ -1,0 +1,16 @@
+:root{
+    --bg-color: #41a6ff;
+    --text-color: #222222;
+}
+
+body.dark-mode{
+    --bg-color: #1a1a1a;
+    --text-color: #f0f0f0;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+  font-family: sans-serif;
+}

@@ -37,6 +37,7 @@ ALLOWED_HOSTS = [
 INSTALLED_APPS = [
     'main.apps.MainConfig',
     'projects.apps.ProjectsConfig',
+    'textes.apps.TextesConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -59,7 +60,7 @@ MIDDLEWARE = [
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:8000",
-    "http://localhost:5173",
+    # "http://localhost:5173",
 ]
 
 ROOT_URLCONF = 'mysite.urls'

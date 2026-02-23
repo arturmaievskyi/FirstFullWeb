@@ -4,6 +4,9 @@ from django.shortcuts import render
 def projects(request):
     return render(request, 'projects/index.html')
 
-def project_detail(request, project_id):
-    
+def project_detail(request, project_id):  
     return render(request, 'projects/detail.html', {'project_id': project_id})
+
+def project_code(request, project_id):
+    return render(request, 'projects/code.html', {'project_id': project_id})
+

@@ -8,6 +8,10 @@ class Projects(models.Model):
     Image = models.ImageField(upload_to='project_images/')
     Is_Public = models.BooleanField(default=True)
     Is_Completed = models.BooleanField(default=False)
+    views = models.IntegerField(default=0)
+    Favorites = models.ManyToManyField('auth.User', related_name='favorite_projects', blank=True)
+    favorites_count = models.IntegerField(default=0)
+    
 
     def __str__(self):
         return self.Title

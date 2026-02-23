@@ -1,8 +1,13 @@
-{% include 'main/layout'   %}
+{% extends 'main/layout.html'   %}
+{% block title %}
+<title>Login</title>
+{% endblock %}
 {% block content %}
     <div class="login">
         <h1 id="login-title">Login</h1>
+
         <form action="{% url 'login' %}" method="post">
+            {% csrf_token %}
             <input type="text" name="username" placeholder="Username">
             <input type="password" name="password" placeholder="Password">
             <button type="submit">Login</button>

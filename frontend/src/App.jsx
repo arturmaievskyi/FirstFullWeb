@@ -8,15 +8,16 @@ function App() {
     const [pageData, setPageData] = useState({});
 
     useEffect(() => {
-        fetch('http://127.0.0.1:8000/') // Path to your Django view
-            // .then(res => res.json())
+        fetch('/test') // Path to your Django view
+            .then(res => res.json())
             .then(data => setPageData(data));
+            return data
 }, []);
 
 
 return (
     <div className="App">
-        <h1>{data.message}</h1>
+        <h1>{pageData.message}</h1>
     </div>
 );
 }
