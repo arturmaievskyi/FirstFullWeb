@@ -8,16 +8,13 @@ class User(models.Model):
     def __str__(self):
         return self.username
     
-class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    bio = models.TextField(blank=True)
+class shortProfile(models.Model):
+    User = models.OneToOneField(
+        'main.User', 
+        on_delete=models.CASCADE,
+        related_name='extended_profile'
+    )
     profile_picture = models.ImageField(upload_to='profile_pictures/', blank=True)
-    Followers = models.ManyToManyField('self', symmetrical=False, related_name='following', blank=True)
-    followers_count = models.IntegerField(default=0)
-    textes_count = models.IntegerField(default=0)
-    textes = models.ManyToManyField('Text', related_name='authors', blank=True)
-    projects_count = models.IntegerField(default=0)
-    projects = models.ManyToManyField('projects.Projects', related_name='contributors', blank=True)
-
+    
     def __str__(self):
         return f"{self.user.username}'s Profile"
