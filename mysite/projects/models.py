@@ -12,6 +12,7 @@ class Projects(models.Model):
     Favorites = models.ManyToManyField('auth.User', related_name='favorite_projects', blank=True)
     favorites_count = models.IntegerField(default=0)
     authors = models.ManyToManyField('auth.User', related_name='authored_projects', blank=True)
+    
         
 
     def __str__(self):
@@ -33,4 +34,3 @@ class Projects(models.Model):
     def remove_favorite(self, user):
         self.Favorites.remove(user)
         self.save(update_fields=['favorites_count'])
-

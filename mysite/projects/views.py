@@ -8,5 +8,5 @@ def project_detail(request, project_id):
     return render(request, 'projects/detail.html', {'project_id': project_id})
 
 def project_code(request, project_id):
-    return render(request, 'projects/code.html', {'project_id': project_id})
 
+    return render(request, 'projects/code.html', {'project_id': project_id})
